@@ -7,7 +7,7 @@ public class enemy : MonoBehaviour
     private Collider2D collider;
 
     [SerializeField]
-    private 
+    private GameObject enemyBulletPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,11 @@ public class enemy : MonoBehaviour
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
+    }
 
+    public void EnemyShoot()
+    {
+        Debug.Log("enemy SHOOOOOOOOT");
+        Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity);
     }
 }

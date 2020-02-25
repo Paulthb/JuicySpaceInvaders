@@ -1667,6 +1667,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1052297495}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &676691886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7723987256566001504, guid: e93586c2db0455e419e1805b994364ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 7723987257290904177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &676691887
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676691886}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2, y: 0.2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!4 &714299805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1890413215915963974, guid: e4015e85e0927af4397e3fc7fce93341,
@@ -1934,6 +1966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList: []
+  enemyShootCooldown: 1
 --- !u!4 &1095809232
 Transform:
   m_ObjectHideFlags: 0

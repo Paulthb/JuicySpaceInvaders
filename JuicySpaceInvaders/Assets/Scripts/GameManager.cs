@@ -23,11 +23,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private List<enemy> enemyList;
+    [SerializeField]
+    private float enemyShootCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(EnemyWillShoot());
     }
 
     // Update is called once per frame
@@ -54,6 +56,16 @@ public class GameManager : MonoBehaviour
     {
         if (enemyList.Count == 0)
             Victory();
+    }
+
+    public IEnumerator EnemyWillShoot()
+    {
+        yield return new WaitForSeconds(enemyShootCooldown);
+
+        int rdmValue = Random.Range(0, enemyList.Count);
+        enemyList[rdmValue].EnemyShoot();
+
+        StartCoroutine(EnemyWillShoot());
     }
 
     public void Victory()

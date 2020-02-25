@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3748645643543683411}
   - component: {fileID: 3328595170954838691}
   - component: {fileID: 4763954081358461047}
-  - component: {fileID: 3980326217969420392}
   - component: {fileID: 2053488149025525768}
   - component: {fileID: 5102450627482225185}
+  - component: {fileID: -7444431064757089789}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Bullet
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,18 +100,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0022269199, y: -0.00000010217129}
   m_Size: {x: 0.16882308, y: 0.16366819}
   m_Direction: 0
---- !u!114 &3980326217969420392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932731915843037634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0164481a815061547b949cff3deadd52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2053488149025525768
 Rigidbody2D:
   serializedVersion: 4
@@ -238,3 +226,15 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &-7444431064757089789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932731915843037634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb16592380c1cb747b820ee9cb8151bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
