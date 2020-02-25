@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,7 +36,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("r"))
+            StartCoroutine(RestartGame());
     }
 
     //call by enemy script
@@ -76,5 +78,12 @@ public class GameManager : MonoBehaviour
     public void Defeat()
     {
         Debug.Log("YOU LOOSE !");
+        StartCoroutine(RestartGame());
+    }
+
+    public IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
