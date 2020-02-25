@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("MoveEnemy", 0.2f, 1f);
+        InvokeRepeating("MoveEnemy", 0.3f, 1f);
         enemyHolder = GetComponent<Transform>();
     }
 
@@ -35,14 +35,30 @@ public class EnemyController : MonoBehaviour
 
             if (enemy.position.y <= -4)
             {
-                //perdu
+                GameManager.Instance.Defeat();
             }
         }
 
-        if(enemyHolder.childCount == 1)
+        //gère l'accélération en fonction du nombre restant de vaisseaux
+        if (enemyHolder.childCount <= 1)
         {
             CancelInvoke();
-            InvokeRepeating("MoveEnemy", 0.1f, 0.25f);
+            InvokeRepeating("MoveEnemy", 0.2f, 0.25f);
+        }
+        else if (enemyHolder.childCount < 10)
+        {
+            CancelInvoke();
+            InvokeRepeating("MoveEnemy", 0.4f, 0.4f);
+        }
+        else if (enemyHolder.childCount < 17)
+        {
+            CancelInvoke();
+            InvokeRepeating("MoveEnemy", 0.6f, 0.6f);
+        }
+        else if (enemyHolder.childCount < 25)
+        {
+            CancelInvoke();
+            InvokeRepeating("MoveEnemy", 0.8f, 0.8f);
         }
     }
 }
