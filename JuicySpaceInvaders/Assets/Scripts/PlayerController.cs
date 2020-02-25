@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private Transform bulletStartPos;
+    [SerializeField]
+    private float shootCooldown;
 
     private Rigidbody2D rb;
 
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator TimeToShoot()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(shootCooldown);
         canShoot = true;
     }
 }
