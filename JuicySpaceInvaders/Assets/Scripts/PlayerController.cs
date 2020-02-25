@@ -44,4 +44,15 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(shootCooldown);
         canShoot = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyBullet")
+        {
+            GameManager.Instance.Defeat();
+
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
 }

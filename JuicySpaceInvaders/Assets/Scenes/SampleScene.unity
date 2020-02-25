@@ -1448,6 +1448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList: []
+  enemyShootCooldown: 1
 --- !u!4 &1095809232
 Transform:
   m_ObjectHideFlags: 0
