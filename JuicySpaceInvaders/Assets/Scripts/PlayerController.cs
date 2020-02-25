@@ -8,8 +8,14 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     [SerializeField]
     private GameObject bulletPrefab;
+    [SerializeField]
+    private Transform bulletStartPos;
+    [SerializeField]
+    private float shootCooldown;
 
     private Rigidbody2D rb;
+
+    private bool canShoot = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +31,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") == 1)
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
-        if (Input.GetAxisRaw("Shoot") != 0)
-            Instantiate(bulletPrefab);
+        if (Input.GetAxisRaw("Shoot") == 1 && canShoot)
+        {
+            canShoot = false;
+            Instantiate(bulletPrefab, bulletStartPos.position, Quaternion.identity);
+            StartCoroutine(TimeToShoot());
+        }
+    }
+
+    IEnumerator TimeToShoot()
+    {
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
     }
 }
