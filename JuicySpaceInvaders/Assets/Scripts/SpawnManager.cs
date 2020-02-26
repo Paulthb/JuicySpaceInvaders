@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField]
     private List<Spawn> SpawnList;
+    [SerializeField]
+    private Vector3 firstEnemyPosition;
 
     // Start is called before the first frame update
     void Start()
