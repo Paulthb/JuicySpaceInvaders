@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float enemyShootCooldown;
 
+    private bool isLevelStart = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,5 +88,10 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void StartGame()
+    {
+        isLevelStart = true;
     }
 }
