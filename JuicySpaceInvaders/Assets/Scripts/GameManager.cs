@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator EnemyWillShoot()
     {
         yield return new WaitForSeconds(enemyShootCooldown);
-        if (enemyList.Count == 0)
+        if (enemyList.Count != 0)
         {
             int rdmValue = Random.Range(0, enemyList.Count);
             enemyList[rdmValue].EnemyShoot();
