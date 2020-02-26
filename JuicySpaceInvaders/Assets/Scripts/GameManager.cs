@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private List<enemy> enemyList;
+    private List<Enemy> enemyList;
     [SerializeField]
     private float enemyShootCooldown;
 
@@ -44,12 +44,12 @@ public class GameManager : MonoBehaviour
 
     //call by enemy script
     #region Call By Enemy
-    public void RegisterToEnemyList(enemy theEnemy)
+    public void RegisterToEnemyList(Enemy theEnemy)
     {
         enemyList.Add(theEnemy);
     }
 
-    public void DeleteFromEnemyList(enemy theEnemy)
+    public void DeleteFromEnemyList(Enemy theEnemy)
     {
         enemyList.Remove(theEnemy);
         CheckEnemyList();
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator EnemyWillShoot()
     {
         yield return new WaitForSeconds(enemyShootCooldown);
-        if (enemyList.Count == 0)
+        if (enemyList.Count != 0)
         {
             int rdmValue = Random.Range(0, enemyList.Count);
             enemyList[rdmValue].EnemyShoot();

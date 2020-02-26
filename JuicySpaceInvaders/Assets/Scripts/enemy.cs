@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private Collider2D collider;
 
     [SerializeField]
     private GameObject enemyBulletPrefab;
+
+    public GameObject explosionAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -17,17 +19,13 @@ public class enemy : MonoBehaviour
         GameManager.Instance.RegisterToEnemyList(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Bullet")
         {
             GameManager.Instance.DeleteFromEnemyList(this);
+
+            LaunchEnemyDeathAnim(gameObject.transform.position);    // lance l'anim d'explosion du vaisseau enemy
 
             Destroy(gameObject);
             Destroy(collision.gameObject);
@@ -38,5 +36,10 @@ public class enemy : MonoBehaviour
     {
         Debug.Log("enemy SHOOOOOOOOT");
         Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity);
+    }
+
+    public void LaunchEnemyDeathAnim(Vector3 enemyPos)
+    {
+        Instantiate(explosionAnim, enemyPos, Quaternion.identity);
     }
 }
