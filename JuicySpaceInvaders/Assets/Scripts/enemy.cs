@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
 
             LaunchEnemyDeathAnim(gameObject.transform.position, explosionParent);    // lance l'anim d'explosion du vaisseau enemy
 
+            CameraShake.Instance.ShakeIt();
+
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
@@ -43,8 +45,8 @@ public class Enemy : MonoBehaviour
 
     public void LaunchEnemyDeathAnim(Vector3 enemyPos, GameObject exploParent)
     {
-        Instantiate(explosionAnim, enemyPos, Quaternion.identity, exploParent.transform);
-        StartCoroutine(WaitForDeleteExploAnim(exploParent));
+        Instantiate(explosionAnim, enemyPos, Quaternion.identity);
+        //StartCoroutine(WaitForDeleteExploAnim(exploParent));
     }
 
     public IEnumerator WaitForDeleteExploAnim(GameObject exploParent)
