@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     public void LaunchEnemyDeathAnim(Vector3 enemyPos, GameObject exploParent)
     {
         Instantiate(explosionAnim, enemyPos, Quaternion.identity, exploParent.transform);
-        StartCoroutine(WaitForDeleteExploAnim(exploParent));
+        //StartCoroutine(WaitForDeleteExploAnim(exploParent));
     }
 
     public IEnumerator WaitForDeleteExploAnim(GameObject exploParent)
