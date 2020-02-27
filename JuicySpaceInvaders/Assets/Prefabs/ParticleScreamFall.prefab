@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6277074086862067761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47387743, y: -1.8299999, z: -8880.023}
+  m_LocalPosition: {x: -0.47387743, y: -1.8299999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6552644642071639883}
@@ -47,17 +47,17 @@ PrefabInstance:
     - target: {fileID: 8069086305912062079, guid: 39c7023cfd2620f44a9689f50793687e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8069086305912062079, guid: 39c7023cfd2620f44a9689f50793687e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8069086305912062079, guid: 39c7023cfd2620f44a9689f50793687e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8880.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8069086305912062079, guid: 39c7023cfd2620f44a9689f50793687e,
         type: 3}
@@ -99,6 +99,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8069086305912062078, guid: 39c7023cfd2620f44a9689f50793687e,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39c7023cfd2620f44a9689f50793687e, type: 3}
 --- !u!4 &6552644642071639883 stripped
@@ -114,25 +119,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7928432774136783856}
     m_Modifications:
-    - target: {fileID: 8285892524928855962, guid: 594318c4c08493241bd7eab85d68fe25,
-        type: 3}
-      propertyPath: m_Name
-      value: ParticleScream
-      objectReference: {fileID: 0}
     - target: {fileID: 8285892524928855963, guid: 594318c4c08493241bd7eab85d68fe25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8285892524928855963, guid: 594318c4c08493241bd7eab85d68fe25,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8285892524928855963, guid: 594318c4c08493241bd7eab85d68fe25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8889.339
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8285892524928855963, guid: 594318c4c08493241bd7eab85d68fe25,
         type: 3}
@@ -173,6 +173,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285892524928855962, guid: 594318c4c08493241bd7eab85d68fe25,
+        type: 3}
+      propertyPath: m_Name
+      value: ParticleScream
+      objectReference: {fileID: 0}
+    - target: {fileID: 8285892524928855965, guid: 594318c4c08493241bd7eab85d68fe25,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594318c4c08493241bd7eab85d68fe25, type: 3}

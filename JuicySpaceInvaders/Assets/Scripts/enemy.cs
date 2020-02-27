@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private GameObject explosionParent;
 
     public GameObject explosionAnim;
+    [SerializeField]
+    private GameObject fallingAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,7 @@ public class Enemy : MonoBehaviour
     public void LaunchEnemyDeathAnim(Vector3 enemyPos, GameObject exploParent)
     {
         Instantiate(explosionAnim, enemyPos, Quaternion.identity);
+        Instantiate(fallingAnim, enemyPos, Quaternion.identity);
         //StartCoroutine(WaitForDeleteExploAnim(exploParent));
     }
 
