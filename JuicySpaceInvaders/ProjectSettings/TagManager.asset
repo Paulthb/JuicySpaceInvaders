@@ -8,6 +8,7 @@ TagManager:
   - Alien
   - killzone
   - EnemyBullet
+  - CloudKillZone
   layers:
   - Default
   - TransparentFX
