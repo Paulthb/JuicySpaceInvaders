@@ -8,6 +8,10 @@ public class SpawnManager : MonoBehaviour
     private List<Spawn> SpawnList;
     [SerializeField]
     private List<Transform> StartPositionList;
+    [SerializeField]
+    private Transform playerTransform;
+    [SerializeField]
+    private Transform playerDestination;
 
     #region SINGLETON PATTERN
     private static SpawnManager _instance;
@@ -30,6 +34,24 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public IEnumerator SpawnPlayer()
+    {
+        float elapsedTime = 0;
+        float waitTime = 1f;
+
+        Vector3 basePos = playerTransform.position;
+
+        while (elapsedTime < waitTime)
+        {
+            playerTransform.position = Vector3.Lerp(basePos, playerDestination.position, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+        playerTransform.position = playerDestination.position;
+        SpawnManager.Instance.SpawnEnemy();
     }
 
     public IEnumerator SpawnEnemy()
