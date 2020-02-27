@@ -11,20 +11,28 @@ public class EnemyController : MonoBehaviour
 
     private bool startFight = false;
 
+    private Vector3 initialPos;
+    private Vector3 targetPos;
+    private Vector3 directionVector;
+    private bool canTurn = false;
+    private bool hasTurn = false;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyHolder = GetComponent<Transform>();
+        directionVector = Vector3.right;
     }
 
     void Update()
     {
-        if (GameManager.Instance.isLevelStart && !startFight)
+        if (GameManager.Instance.isLevelStart && !startFight && !JuicyManager.Instance.smoothMove)
         {
             InvokeRepeating("MoveEnemy", 0.3f, 1f);
             startFight = true;
         }
-        
+        else if (GameManager.Instance.isLevelStart && !startFight && JuicyManager.Instance.smoothMove)
+            SmoothMoveEnemy();
     }
 
     void MoveEnemy()
@@ -67,6 +75,44 @@ public class EnemyController : MonoBehaviour
         {
             CancelInvoke();
             InvokeRepeating("MoveEnemy", 0.8f, 0.8f);
+        }
+    }
+
+    void SmoothMoveEnemy()
+    {
+        enemyHolder.transform.Translate(directionVector * speed * Time.deltaTime);
+
+        foreach (Transform enemy in enemyHolder)
+        {
+
+            if ((enemy.position.x < -screenLimit || enemy.position.x > screenLimit) && !hasTurn)
+            {
+                canTurn = true;
+                initialPos = enemy.position;
+                targetPos = initialPos + new Vector3(0, 2, 0);
+            } else
+            {
+                hasTurn = false;
+                canTurn = false;
+            }
+
+            if (canTurn)
+            {
+                hasTurn = true;
+                directionVector = Vector3.down;
+                canTurn = false;
+            }
+
+            if (enemy.position.y <= targetPos.y)
+            {
+                directionVector = Vector3.right;
+                speed = -speed;
+            }
+
+            if (enemy.position.y <= -4)
+            {
+                GameManager.Instance.Defeat();
+            }
         }
     }
 }
