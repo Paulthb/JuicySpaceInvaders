@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890413215915963973}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.27, y: 0, z: 1.9217974}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBulletPrefab: {fileID: 7932731915843037634, guid: 08facb87febd3b7478bdc4ef174dd5db,
+    type: 3}
+  explosionParent: {fileID: 9201517555729765759, guid: 715741934649807428f28ff237fd0fbd,
     type: 3}
   explosionAnim: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}

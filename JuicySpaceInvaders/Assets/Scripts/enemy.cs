@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject enemyBulletPrefab;
 
+    [SerializeField]
+    private GameObject explosionParent;
+
     public GameObject explosionAnim;
 
     // Start is called before the first frame update
@@ -25,7 +28,9 @@ public class Enemy : MonoBehaviour
         {
             GameManager.Instance.DeleteFromEnemyList(this);
 
-            LaunchEnemyDeathAnim(gameObject.transform.position);    // lance l'anim d'explosion du vaisseau enemy
+            LaunchEnemyDeathAnim(gameObject.transform.position, explosionParent);    // lance l'anim d'explosion du vaisseau enemy
+
+            CameraShake.Instance.ShakeIt();
 
             Destroy(gameObject);
             Destroy(collision.gameObject);
@@ -38,8 +43,20 @@ public class Enemy : MonoBehaviour
         Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity);
     }
 
-    public void LaunchEnemyDeathAnim(Vector3 enemyPos)
+    public void LaunchEnemyDeathAnim(Vector3 enemyPos, GameObject exploParent)
     {
         Instantiate(explosionAnim, enemyPos, Quaternion.identity);
+        //StartCoroutine(WaitForDeleteExploAnim(exploParent));
+    }
+
+    public IEnumerator WaitForDeleteExploAnim(GameObject exploParent)
+    {
+        if (exploParent.transform.childCount > 0)
+        {
+            yield return new WaitForSeconds(2f);
+            Debug.Log("Destroy");
+            for(int i = 0; i <= exploParent.transform.childCount; i++)
+                Destroy(exploParent.transform.GetChild(i).gameObject);
+        }
     }
 }
