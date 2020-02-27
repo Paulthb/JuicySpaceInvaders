@@ -29,16 +29,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") == -1)
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        if (Input.GetAxisRaw("Horizontal") == 1)
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-
-        if (Input.GetAxisRaw("Shoot") == 1 && canShoot)
+        if (GameManager.Instance.isLevelStart)
         {
-            canShoot = false;
-            Instantiate(bulletPrefab, bulletStartPos.position, Quaternion.identity);
-            StartCoroutine(TimeToShoot());
+            if (Input.GetAxisRaw("Horizontal") == -1)
+                transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            if (Input.GetAxisRaw("Horizontal") == 1)
+                transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+
+            if (Input.GetAxisRaw("Shoot") == 1 && canShoot)
+            {
+                canShoot = false;
+                Instantiate(bulletPrefab, bulletStartPos.position, Quaternion.identity);
+                StartCoroutine(TimeToShoot());
+            }
         }
     }
 
