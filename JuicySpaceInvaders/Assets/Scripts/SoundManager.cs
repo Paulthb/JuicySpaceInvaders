@@ -4,62 +4,94 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource efxSource;
+    [SerializeField]
+    private AudioSource audioSourceSong;
+    [SerializeField]
+    private AudioSource audioSourceEffect;
+    [SerializeField]
+    private AudioSource audioSourceEffect2;
 
-    public AudioSource musicSource;
+    [SerializeField]
+    private AudioClip aerobic;
+    [SerializeField]
+    private AudioClip urss;
+    [SerializeField]
+    private AudioClip america;
+    [SerializeField]
+    private AudioClip eagle;
+    [SerializeField]
+    private AudioClip explosion1;
+    [SerializeField]
+    private AudioClip explosion2;
+    [SerializeField]
+    private AudioClip fuck;
+    [SerializeField]
+    private AudioClip shit;
 
-    public static SoundManager instance = null;        //Allows other scripts to call functions from SoundManager.                
-    public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
-    public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 
-    public AudioClip eagle;
-    public AudioClip fuck;
-    public AudioClip screamFall;
+    // SINGLETON ---------------------------------------------
+    private static SoundManager _instance;
 
+    public static SoundManager Instance { get { return _instance; } }
 
-    void Awake()
+    private void Awake()
     {
-        //Check if there is already an instance of SoundManager
-        if (instance == null)
-            //if not, set it to this.
-            instance = this;
-        //If instance already exists:
-        else if (instance != this)
-            //Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
-            Destroy(gameObject);
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }//--------------------------------------------------------------------
 
-        //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        DontDestroyOnLoad(gameObject);
+    public void PlayAerobicSound()
+    {
+        audioSourceSong = aerobic;
+        audioSourceSong.Play();
     }
 
-
-    //Used to play single sound clips.
-    public void PlaySingle(AudioClip clip)
+    public void PlayerUrssSound()
     {
-        //Set the clip of our efxSource audio source to the clip passed in as a parameter.
-        efxSource.clip = clip;
-
-        //Play the clip.
-        efxSource.Play();
+        audioSourceSong = urss;
+        audioSourceSong.Play();
     }
 
-
-    //RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
-    public void RandomizeSfx(params AudioClip[] clips)
+    public void PlayerAmericaSound()
     {
-        //Generate a random number between 0 and the length of our array of clips passed in.
-        int randomIndex = Random.Range(0, clips.Length);
-
-        //Choose a random pitch to play back our clip at between our high and low pitch ranges.
-        float randomPitch = Random.Range(lowPitchRange, highPitchRange);
-
-        //Set the pitch of the audio source to the randomly chosen pitch.
-        efxSource.pitch = randomPitch;
-
-        //Set the clip to the clip at our randomly chosen index.
-        efxSource.clip = clips[randomIndex];
-
-        //Play the clip.
-        efxSource.Play();
+        audioSourceSong = america;
+        audioSourceSong.Play();
     }
+
+    public void PlayerExplosionSound()
+    {
+        int rdmsongId = random.range(1, 2);
+
+        if (rdmsongId == 1)
+            audioSourceEffect.clip = explosion1;
+        else
+            audioSourceEffect.clip = explosion2;
+
+        audioSourceEffect.Play();
+    }
+
+    public void PlayerEagleSound()
+    {
+        audioSourceEffect = eagle;
+        audioSourceEffect.Play();
+    }
+
+    public void PlayerFuckSound()
+    {
+        int rdmsongId = random.range(1, 2);
+
+        if (rdmsongId == 1)
+            audioSourceEffect2.clip = fuck;
+        else
+            audioSourceEffect2.clip = shit;
+        
+        audioSourceEffect2.Play();
+    }
+
 }
