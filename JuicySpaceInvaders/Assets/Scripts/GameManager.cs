@@ -143,9 +143,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayAmericanFirework()
     {
-        foreach(ParticleSystem firework in americanFireworks)
+        if (JuicyManager.Instance.fireworks)
         {
-            firework.Play();
+            foreach (ParticleSystem firework in americanFireworks)
+            {
+                firework.Play();
+            }
         }
     }
 }

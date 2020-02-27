@@ -50,49 +50,70 @@ public class SoundManager : MonoBehaviour
 
     public void PlayAerobicSound()
     {
-        audioSourceSong.clip = aerobic;
-        audioSourceSong.Play();
+        if (JuicyManager.Instance.soundEffect)
+        {
+            audioSourceSong.clip = aerobic;
+            audioSourceSong.Play();
+        }
     }
 
     public void PlayerUrssSound()
     {
-        audioSourceSong.clip = urss;
-        audioSourceSong.Play();
+        if (JuicyManager.Instance.soundEffect)
+        {
+            audioSourceSong.clip = urss;
+            audioSourceSong.Play();
+        }
     }
 
     public void PlayerAmericaSound()
     {
-        audioSourceSong.clip = america;
-        audioSourceSong.Play();
+        if (JuicyManager.Instance.soundEffect)
+        {
+            audioSourceSong.clip = america;
+            audioSourceSong.Play();
+        }
     }
 
     public void PlayerExplosionSound()
     {
-        int rdmsongId = Random.Range(1, 3);
+        if (JuicyManager.Instance.soundEffect)
+        {
+            int rdmsongId = Random.Range(1, 3);
 
-        if (rdmsongId == 1)
-            audioSourceEffect.clip = explosion1;
-        else
-            audioSourceEffect.clip = explosion2;
+            if (rdmsongId == 1)
+                audioSourceEffect.clip = explosion1;
+            else
+                audioSourceEffect.clip = explosion2;
 
-        audioSourceEffect.Play();
+            audioSourceEffect.Play();
+        }
     }
 
     public void PlayerEagleSound()
     {
-        audioSourceEffect.clip = eagle;
-        audioSourceEffect.Play();
+        if (JuicyManager.Instance.soundEffect)
+        {
+            audioSourceEffect.clip = eagle;
+            audioSourceEffect.Play();
+        }
     }
 
     public void PlayerFuckSound()
     {
-       audioSourceEffect2.clip = fuck;
-       audioSourceEffect2.Play();
+        if (JuicyManager.Instance.soundEffect)
+        {
+            audioSourceEffect2.clip = fuck;
+            audioSourceEffect2.Play();
+        }
     }
 
     public void PlayerScreamFallSound()
     {
-        audioSourceEffect.clip = screamFall;
-        audioSourceEffect.Play();
+        if (JuicyManager.Instance.soundEffect)
+        {
+            audioSourceEffect.clip = screamFall;
+            audioSourceEffect.Play();
+        }
     }
 }

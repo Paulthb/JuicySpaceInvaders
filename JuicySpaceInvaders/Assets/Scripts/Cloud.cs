@@ -19,7 +19,10 @@ public class Cloud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * cloudSpeed * Time.deltaTime);
+        if (JuicyManager.Instance.paralax)
+        {
+            transform.Translate(Vector3.down * cloudSpeed * Time.deltaTime);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

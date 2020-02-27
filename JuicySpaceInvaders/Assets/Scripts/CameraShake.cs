@@ -37,9 +37,12 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeIt()
     {
-        cameraInitialPosition = this.transform.position;
-        InvokeRepeating("StartCameraShaking", 0f, 0.005f);
-        Invoke("StopCameraShaking", shakeTime);
+        if (JuicyManager.Instance.shakeScreen)
+        {
+            cameraInitialPosition = this.transform.position;
+            InvokeRepeating("StartCameraShaking", 0f, 0.005f);
+            Invoke("StopCameraShaking", shakeTime);
+        }
     }
 
     void StartCameraShaking()

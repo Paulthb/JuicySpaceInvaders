@@ -3142,7 +3142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList: []
-  enemyShootCooldown: 1
+  enemyShootCooldown: 2
   americanFireworks:
   - {fileID: 1654250786}
   - {fileID: 1079490064}
