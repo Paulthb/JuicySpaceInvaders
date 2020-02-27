@@ -688,38 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6365e42fef60dfe47b6dadfbebb58d4a, type: 3}
---- !u!1 &125261345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 125261347}
-  - component: {fileID: 125261346}
-  m_Layer: 0
-  m_Name: EnemyContainer2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &125261346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125261345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84d855659c101f4ba71872db99b355c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  screenLimit: 7.5
---- !u!4 &125261347
+--- !u!4 &171150217 stripped
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -850,7 +819,7 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1890413215915963974, guid: e4015e85e0927af4397e3fc7fce93341,
     type: 3}
-  m_PrefabInstance: {fileID: 141290853}
+  m_PrefabInstance: {fileID: 439315074}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &141673557
 PrefabInstance:
@@ -1915,7 +1884,7 @@ PrefabInstance:
     - target: {fileID: 1890413215915963974, guid: e4015e85e0927af4397e3fc7fce93341,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1890413215915963974, guid: e4015e85e0927af4397e3fc7fce93341,
         type: 3}
@@ -1987,12 +1956,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e4015e85e0927af4397e3fc7fce93341, type: 3}
---- !u!4 &464931845 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1890413215915963974, guid: e4015e85e0927af4397e3fc7fce93341,
-    type: 3}
-  m_PrefabInstance: {fileID: 464931844}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &500957270
 GameObject:
   m_ObjectHideFlags: 0
