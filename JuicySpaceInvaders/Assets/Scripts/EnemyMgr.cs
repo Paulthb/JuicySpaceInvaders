@@ -29,6 +29,8 @@ public class EnemyMgr : MonoBehaviour
 
             GameManager.Instance.DeleteFromEnemyList(this);
 
+            GameManager.Instance.PlayAmericanFirework();
+
             LaunchEnemyDeathAnim(gameObject.transform.position);    // lance l'anim d'explosion du vaisseau enemy
 
             CameraShake.Instance.ShakeIt();

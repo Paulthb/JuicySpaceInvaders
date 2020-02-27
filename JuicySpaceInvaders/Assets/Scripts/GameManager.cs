@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     private List<EnemyMgr> enemyList;
     [SerializeField]
     private float enemyShootCooldown;
+    [SerializeField]
+    private List<ParticleSystem> americanFireworks;
+
 
     public bool isLevelStart = false;
 
@@ -99,5 +102,13 @@ public class GameManager : MonoBehaviour
         isLevelStart = true;
         StartCoroutine(EnemyWillShoot());
         SoundManager.Instance.PlayAerobicSound();
+    }
+
+    public void PlayAmericanFirework()
+    {
+        foreach(ParticleSystem firework in americanFireworks)
+        {
+            firework.Play();
+        }
     }
 }
