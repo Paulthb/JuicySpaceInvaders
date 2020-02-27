@@ -48,25 +48,25 @@ public class SoundManager : MonoBehaviour
 
     public void PlayAerobicSound()
     {
-        audioSourceSong = aerobic;
+        audioSourceSong.clip = aerobic;
         audioSourceSong.Play();
     }
 
     public void PlayerUrssSound()
     {
-        audioSourceSong = urss;
+        audioSourceSong.clip = urss;
         audioSourceSong.Play();
     }
 
     public void PlayerAmericaSound()
     {
-        audioSourceSong = america;
+        audioSourceSong.clip = america;
         audioSourceSong.Play();
     }
 
     public void PlayerExplosionSound()
     {
-        int rdmsongId = random.range(1, 2);
+        int rdmsongId = Random.Range(1, 2);
 
         if (rdmsongId == 1)
             audioSourceEffect.clip = explosion1;
@@ -78,13 +78,13 @@ public class SoundManager : MonoBehaviour
 
     public void PlayerEagleSound()
     {
-        audioSourceEffect = eagle;
+        audioSourceEffect.clip = eagle;
         audioSourceEffect.Play();
     }
 
     public void PlayerFuckSound()
     {
-        int rdmsongId = random.range(1, 2);
+        int rdmsongId = Random.Range(1, 2);
 
         if (rdmsongId == 1)
             audioSourceEffect2.clip = fuck;
