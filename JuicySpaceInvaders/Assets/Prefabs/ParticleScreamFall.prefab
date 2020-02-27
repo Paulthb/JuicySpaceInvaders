@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 8069086305912062078, guid: 39c7023cfd2620f44a9689f50793687e,
         type: 3}
       propertyPath: startDelay.scalar
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39c7023cfd2620f44a9689f50793687e, type: 3}
@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 8285892524928855965, guid: 594318c4c08493241bd7eab85d68fe25,
         type: 3}
       propertyPath: startDelay.scalar
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594318c4c08493241bd7eab85d68fe25, type: 3}

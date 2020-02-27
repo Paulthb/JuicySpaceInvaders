@@ -136,5 +136,5 @@ MonoBehaviour:
     type: 3}
   explosionAnim: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}
-  fallingAnim: {fileID: 8069086305912062048, guid: 39c7023cfd2620f44a9689f50793687e,
+  fallingAnim: {fileID: 6277074086862067761, guid: 46282678604d2f143bd3d6e336ed7b8a,
     type: 3}

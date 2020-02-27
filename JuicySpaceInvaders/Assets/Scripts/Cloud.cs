@@ -26,7 +26,6 @@ public class Cloud : MonoBehaviour
     {
         if (collision.tag == "CloudKillZone")
         {
-            Debug.Log("cloud !");
             transform.position = new Vector3(transform.position.x, CloudRespawnHeight, transform.position.z);
         }
     }

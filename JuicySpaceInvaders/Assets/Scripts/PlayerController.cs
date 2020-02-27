@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private Transform bulletStartPos;
     [SerializeField]
     private float shootCooldown;
+    [SerializeField]
+    private GameObject ExplosionAnim;
+
 
     private Rigidbody2D rb;
 
@@ -50,6 +53,8 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "EnemyBullet")
         {
             GameManager.Instance.Defeat();
+
+            Instantiate(ExplosionAnim, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
             Destroy(collision.gameObject);
