@@ -13,12 +13,23 @@ public class EnemyMgr : MonoBehaviour
     [SerializeField]
     private GameObject fallingAnim;
 
+    [SerializeField]
+    private GameObject trail;
+
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<Collider2D>();
 
         GameManager.Instance.RegisterToEnemyList(this);
+    }
+
+    void Update()
+    {
+        if (JuicyManager.Instance.trail)
+            trail.SetActive(true);
+        else
+            trail.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +59,10 @@ public class EnemyMgr : MonoBehaviour
 
     public void LaunchEnemyDeathAnim(Vector3 enemyPos)
     {
-        Instantiate(explosionAnim, enemyPos, Quaternion.identity);
-        Instantiate(fallingAnim, enemyPos, Quaternion.identity);
+        if (JuicyManager.Instance.explosionAnim)
+        {
+            Instantiate(explosionAnim, enemyPos, Quaternion.identity);
+            Instantiate(fallingAnim, enemyPos, Quaternion.identity);
+        }
     }
 }

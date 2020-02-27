@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     private float shootCooldown;
     [SerializeField]
     private GameObject ExplosionAnim;
-
+    [SerializeField]
+    private GameObject trail;
 
     private Rigidbody2D rb;
 
@@ -43,6 +44,10 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(TimeToShoot());
             }
         }
+        if (JuicyManager.Instance.trail)
+            trail.SetActive(true);
+        else
+            trail.SetActive(false);
     }
 
     IEnumerator TimeToShoot()

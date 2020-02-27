@@ -139,6 +139,7 @@ MonoBehaviour:
     type: 3}
   fallingAnim: {fileID: 6277074086862067761, guid: 46282678604d2f143bd3d6e336ed7b8a,
     type: 3}
+  trail: {fileID: 3696275397796916740}
 --- !u!1001 &3413836292584451382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +209,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9834f159fb17de3439af22cf97a2901f, type: 3}
+--- !u!1 &3696275397796916740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2029906163745047346, guid: 9834f159fb17de3439af22cf97a2901f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3413836292584451382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3696275397796916739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2029906163745047349, guid: 9834f159fb17de3439af22cf97a2901f,
