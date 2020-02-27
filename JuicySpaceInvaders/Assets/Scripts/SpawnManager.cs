@@ -32,20 +32,25 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    public void SpawnEnemy()
+    public IEnumerator SpawnEnemy()
     {
-        if (StartPositionList.Count != 0)
+        int rdmSpawnId;
+        int rdmStartPositionId;
+
+        while (StartPositionList.Count != 0)
         {
-            int rdmSpawnId = Random.Range(0, SpawnList.Count);
-            int rdmStartPositionId = Random.Range(0, StartPositionList.Count);
+            rdmSpawnId = Random.Range(0, SpawnList.Count);
+            rdmStartPositionId = Random.Range(0, StartPositionList.Count);
 
             //fonction spawn avec le spawner choisie et la destination
             SpawnList[rdmSpawnId].SpawnEnemy(StartPositionList[rdmStartPositionId]);
 
             //on retire la destination de la liste
             StartPositionList.Remove(StartPositionList[rdmStartPositionId]);
+            yield return new WaitForSeconds(0.15f);
         }
-        else
-            Debug.Log("LAUNCH GAME !");
+        yield return new WaitForSeconds(0.2f);
+
+        GameManager.Instance.StartGame();
     }
 }
