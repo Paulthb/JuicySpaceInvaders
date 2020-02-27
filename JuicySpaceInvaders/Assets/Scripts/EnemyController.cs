@@ -10,8 +10,6 @@ public class EnemyController : MonoBehaviour
     public float screenLimit = 10.5f;
 
     private bool startFight = false;
-    //public GameObject shot;
-    //public float fireRate = 0.997f;
 
     // Start is called before the first frame update
     void Start()

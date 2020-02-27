@@ -97,8 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBulletPrefab: {fileID: 7932731915843037634, guid: 08facb87febd3b7478bdc4ef174dd5db,
     type: 3}
-  explosionParent: {fileID: 9201517555729765759, guid: 715741934649807428f28ff237fd0fbd,
-    type: 3}
+  explosionParent: {fileID: 0}
   explosionAnim: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}
 --- !u!50 &1890413215915963969

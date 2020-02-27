@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.PlayerEagleSound();
         StartCoroutine(SpawnManager.Instance.SpawnEnemy());
         StartCoroutine(SpawnManager.Instance.SpawnPlayer());
     }
@@ -77,17 +78,19 @@ public class GameManager : MonoBehaviour
     public void Victory()
     {
         Debug.Log("YOU WIN !");
+        SoundManager.Instance.PlayerAmericaSound();
     }
 
     public void Defeat()
     {
+        SoundManager.Instance.PlayerUrssSound();
         Debug.Log("YOU LOOSE !");
         StartCoroutine(RestartGame());
     }
 
     public IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -95,5 +98,6 @@ public class GameManager : MonoBehaviour
     {
         isLevelStart = true;
         StartCoroutine(EnemyWillShoot());
+        SoundManager.Instance.PlayAerobicSound();
     }
 }
