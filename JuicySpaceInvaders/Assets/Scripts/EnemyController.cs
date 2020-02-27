@@ -8,15 +8,25 @@ public class EnemyController : MonoBehaviour
     private Transform enemyHolder;
     public float speed;
     public float screenLimit = 10.5f;
-    
+
+    private bool startFight = false;
     //public GameObject shot;
     //public float fireRate = 0.997f;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("MoveEnemy", 0.3f, 1f);
         enemyHolder = GetComponent<Transform>();
+    }
+
+    void Update()
+    {
+        if (GameManager.Instance.isLevelStart && !startFight)
+        {
+            InvokeRepeating("MoveEnemy", 0.3f, 1f);
+            startFight = true;
+        }
+        
     }
 
     void MoveEnemy()

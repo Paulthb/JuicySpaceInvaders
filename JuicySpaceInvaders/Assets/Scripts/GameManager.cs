@@ -27,12 +27,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float enemyShootCooldown;
 
-    private bool isLevelStart = false;
+    public bool isLevelStart = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EnemyWillShoot());
+        StartCoroutine(SpawnManager.Instance.SpawnEnemy());
     }
 
     // Update is called once per frame
@@ -93,5 +93,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isLevelStart = true;
+        StartCoroutine(EnemyWillShoot());
     }
 }
