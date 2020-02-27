@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
+            SoundManager.Instance.PlayerExplosionSound();
+
             GameManager.Instance.DeleteFromEnemyList(this);
 
             LaunchEnemyDeathAnim(gameObject.transform.position, explosionParent);    // lance l'anim d'explosion du vaisseau enemy

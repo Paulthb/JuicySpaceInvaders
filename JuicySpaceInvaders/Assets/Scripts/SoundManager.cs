@@ -27,6 +27,8 @@ public class SoundManager : MonoBehaviour
     private AudioClip fuck;
     [SerializeField]
     private AudioClip shit;
+    [SerializeField]
+    private AudioClip screamFall;
 
 
     // SINGLETON ---------------------------------------------
@@ -66,7 +68,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayerExplosionSound()
     {
-        int rdmsongId = Random.Range(1, 2);
+        int rdmsongId = Random.Range(1, 3);
 
         if (rdmsongId == 1)
             audioSourceEffect.clip = explosion1;
@@ -84,14 +86,13 @@ public class SoundManager : MonoBehaviour
 
     public void PlayerFuckSound()
     {
-        int rdmsongId = Random.Range(1, 2);
-
-        if (rdmsongId == 1)
-            audioSourceEffect2.clip = fuck;
-        else
-            audioSourceEffect2.clip = shit;
-        
-        audioSourceEffect2.Play();
+       audioSourceEffect2.clip = fuck;
+       audioSourceEffect2.Play();
     }
 
+    public void PlayerScreamFallSound()
+    {
+        audioSourceEffect.clip = screamFall;
+        audioSourceEffect.Play();
+    }
 }
