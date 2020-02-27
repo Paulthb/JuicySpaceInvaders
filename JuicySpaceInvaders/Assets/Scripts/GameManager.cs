@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.Instance.PlayerEagleSound();
-        StartCoroutine(SpawnManager.Instance.SpawnEnemy());
-        StartCoroutine(SpawnManager.Instance.SpawnPlayer());
+        //SoundManager.Instance.PlayerEagleSound();
+        //StartCoroutine(SpawnManager.Instance.SpawnEnemy());
+        //StartCoroutine(SpawnManager.Instance.SpawnPlayer());
     }
 
     // Update is called once per frame
@@ -120,6 +120,18 @@ public class GameManager : MonoBehaviour
         loseScreen.gameObject.SetActive(false);
         replayBtn.SetActive(false);
         isGameFinished = false;
+    }
+
+    public void JuicyGame()
+    {
+        SoundManager.Instance.PlayerEagleSound();
+        StartCoroutine(SpawnManager.Instance.SpawnEnemy());
+        StartCoroutine(SpawnManager.Instance.SpawnPlayer());
+    }
+
+    public void NormaleGame()
+    {
+        SpawnManager.Instance.SpawnNormal();
     }
 
     public void StartGame()

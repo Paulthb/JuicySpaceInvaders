@@ -41,16 +41,20 @@ public class JuicyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameStart == false)
+        if (gameStart == false)
+        { 
             if (Input.GetKeyDown(KeyCode.Alpha0))
             {
                 Debug.Log("lancement Juicy!");
+                GameManager.Instance.JuicyGame();
                 gameStart = true;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 Debug.Log("lancement normale");
+                GameManager.Instance.NormaleGame();
                 gameStart = true;
             }
+        }
     }
 }

@@ -12,6 +12,10 @@ public class SpawnManager : MonoBehaviour
     private Transform playerTransform;
     [SerializeField]
     private Transform playerDestination;
+    [SerializeField]
+    private GameObject enemyObject;
+    [SerializeField]
+    private GameObject enemyContainer;
 
     #region SINGLETON PATTERN
     private static SpawnManager _instance;
@@ -72,6 +76,17 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
         }
         yield return new WaitForSeconds(0.2f);
+
+        GameManager.Instance.StartGame();
+    }
+
+    public void SpawnNormal()
+    {
+        foreach(Transform startpos in StartPositionList)
+        {
+            Instantiate(enemyObject, startpos.position, Quaternion.identity, enemyContainer.transform);
+        }
+        playerTransform.position = playerDestination.position;
 
         GameManager.Instance.StartGame();
     }
