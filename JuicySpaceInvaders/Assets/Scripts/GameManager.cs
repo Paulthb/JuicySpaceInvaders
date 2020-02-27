@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,14 @@ public class GameManager : MonoBehaviour
 
     public bool isLevelStart = false;
 
+    public GameObject winScreen;
+    public GameObject loseScreen;
+    public GameObject replayBtn;
+    public GameObject player;
+    public GameObject enemyContainer;
+
+    public bool isGameFinished = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +53,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKey("r"))
-            StartCoroutine(RestartGame());
+            RestartGame();
     }
 
     //call by enemy script
@@ -80,21 +89,37 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
-        Debug.Log("YOU WIN !");
-        SoundManager.Instance.PlayerAmericaSound();
+        if (!isGameFinished)
+        {
+            Debug.Log("YOU WIN !");
+            SoundManager.Instance.PlayerAmericaSound();
+            winScreen.SetActive(true);
+            replayBtn.SetActive(true);
+            player.SetActive(false);
+            isGameFinished = true;
+        }
     }
 
     public void Defeat()
     {
-        SoundManager.Instance.PlayerUrssSound();
-        Debug.Log("YOU LOOSE !");
-        StartCoroutine(RestartGame());
+        if (!isGameFinished)
+        {
+            SoundManager.Instance.PlayerUrssSound();
+            Debug.Log("YOU LOOSE !");
+            loseScreen.gameObject.SetActive(true);
+            replayBtn.SetActive(true);
+            enemyContainer.SetActive(false);
+            isGameFinished = true;
+        }
     }
 
-    public IEnumerator RestartGame()
+    public void RestartGame()
     {
-        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        winScreen.gameObject.SetActive(false);
+        loseScreen.gameObject.SetActive(false);
+        replayBtn.SetActive(false);
+        isGameFinished = false;
     }
 
     public void StartGame()
