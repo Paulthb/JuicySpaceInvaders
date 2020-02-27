@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnManager.Instance.SpawnEnemy());
+        StartCoroutine(SpawnManager.Instance.SpawnPlayer());
     }
 
     // Update is called once per frame
