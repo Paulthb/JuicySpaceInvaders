@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.tag == "killzone")
         {
-            SoundManager.Instance.PlayerFuckSound();
+            //SoundManager.Instance.PlayerFuckSound();
             Destroy(gameObject);
             //Debug.Log("bullet destroy normally");
         }

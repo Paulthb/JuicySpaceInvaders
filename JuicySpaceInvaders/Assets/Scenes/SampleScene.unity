@@ -3171,6 +3171,7 @@ MonoBehaviour:
   replayBtn: {fileID: 2129706164}
   player: {fileID: 1680795275}
   enemyContainer: {fileID: 1068885238}
+  isGameFinished: 0
 --- !u!4 &1095809232
 Transform:
   m_ObjectHideFlags: 0
@@ -3259,6 +3260,9 @@ MonoBehaviour:
   - {fileID: 1075995294}
   playerTransform: {fileID: 1053899064}
   playerDestination: {fileID: 832971669}
+  enemyObject: {fileID: 1890413215915963973, guid: e4015e85e0927af4397e3fc7fce93341,
+    type: 3}
+  enemyContainer: {fileID: 1068885238}
 --- !u!4 &1149816316
 Transform:
   m_ObjectHideFlags: 0
@@ -5461,6 +5465,56 @@ Transform:
   m_Father: {fileID: 1198422780}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1834419087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834419089}
+  - component: {fileID: 1834419088}
+  m_Layer: 0
+  m_Name: JuicyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1834419088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834419087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c186bc6ba387ce42a99654050dccef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionAnim: 1
+  trail: 1
+  fireworks: 1
+  shakeScreen: 1
+  soundEffect: 1
+  paralax: 1
+  smoothMove: 1
+--- !u!4 &1834419089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834419087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.024985801, y: -1.0257633, z: -10.912109}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1857287559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,17 +6417,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7723987256566001508, guid: e93586c2db0455e419e1805b994364ed,
-        type: 3}
-      propertyPath: shootCooldown
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7723987256566001508, guid: e93586c2db0455e419e1805b994364ed,
-        type: 3}
-      propertyPath: ExplosionAnim
-      value: 
-      objectReference: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
-        type: 3}
     - target: {fileID: 7723987256566001506, guid: e93586c2db0455e419e1805b994364ed,
         type: 3}
       propertyPath: m_Sprite
@@ -6395,5 +6438,16 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7723987256566001508, guid: e93586c2db0455e419e1805b994364ed,
+        type: 3}
+      propertyPath: shootCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723987256566001508, guid: e93586c2db0455e419e1805b994364ed,
+        type: 3}
+      propertyPath: ExplosionAnim
+      value: 
+      objectReference: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93586c2db0455e419e1805b994364ed, type: 3}
