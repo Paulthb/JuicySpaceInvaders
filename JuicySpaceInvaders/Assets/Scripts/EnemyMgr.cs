@@ -63,6 +63,7 @@ public class EnemyMgr : MonoBehaviour
         {
             Instantiate(explosionAnim, enemyPos, Quaternion.identity);
             Instantiate(fallingAnim, enemyPos, Quaternion.identity);
+            SoundManager.Instance.PlayerScreamFallSound();
         }
     }
 }

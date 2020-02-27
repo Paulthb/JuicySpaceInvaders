@@ -30,6 +30,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioClip screamFall;
 
+    public float scream;
 
     // SINGLETON ---------------------------------------------
     private static SoundManager _instance;
@@ -112,8 +113,8 @@ public class SoundManager : MonoBehaviour
     {
         if (JuicyManager.Instance.soundEffect)
         {
-            audioSourceEffect.clip = screamFall;
-            audioSourceEffect.Play();
+            audioSourceEffect2.clip = screamFall;
+            audioSourceEffect2.PlayDelayed(scream);
         }
     }
 }

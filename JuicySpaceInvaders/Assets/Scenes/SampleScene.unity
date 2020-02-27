@@ -5336,6 +5336,7 @@ MonoBehaviour:
   fuck: {fileID: 8300000, guid: d8e2ee55d27ad2240855099836de0917, type: 3}
   shit: {fileID: 8300000, guid: 4952fb4d05c47b046b9bced59ce18e42, type: 3}
   screamFall: {fileID: 8300000, guid: aaeba7a993a8e0348872f6c04acf61c8, type: 3}
+  scream: 0.5
 --- !u!1001 &1819981001
 PrefabInstance:
   m_ObjectHideFlags: 0
