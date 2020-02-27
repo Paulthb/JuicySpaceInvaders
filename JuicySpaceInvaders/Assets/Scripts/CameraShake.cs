@@ -6,6 +6,7 @@ public class CameraShake : MonoBehaviour
 {
     Vector3 cameraInitialPosition;
     public float shakeMagnitude = 0.05f, shakeTime = 0.5f;
+    private Vector3 cameraPos;
 
     private static CameraShake _instance;
 
@@ -26,6 +27,11 @@ public class CameraShake : MonoBehaviour
 
             return _instance;
         }
+    }
+
+    void Start()
+    {
+        cameraPos = this.transform.position;
     }
 
 
@@ -49,6 +55,6 @@ public class CameraShake : MonoBehaviour
     void StopCameraShaking()
     {
         CancelInvoke("StartCameraShaking");
-        this.transform.position = cameraInitialPosition;
+        this.transform.position = cameraPos;
     }
 }
